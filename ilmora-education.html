@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ILMORA Education — Your Complete Career Development Partner</title>
+<meta name="description" content="Flexible UG, PG & PhD programs for working professionals. Complete attestation, UAE equivalency, and documentation support — A to Z.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0D0D0D;
+  --charcoal: #1E1E1E;
+  --charcoal2: #161616;
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --gold-dark: #9E7A2A;
+  --white: #FFFFFF;
+  --white-70: rgba(255,255,255,0.70);
+  --white-50: rgba(255,255,255,0.50);
+  --white-20: rgba(255,255,255,0.20);
+  --white-08: rgba(255,255,255,0.08);
+  --white-05: rgba(255,255,255,0.05);
+  --serif: 'Cormorant Garamond', serif;
+  --sans: 'Montserrat', sans-serif;
+  --gold-gradient: linear-gradient(135deg, #E8C96A 0%, #C9A84C 50%, #9E7A2A 100%);
+  --gold-text: linear-gradient(90deg, #E8C96A, #C9A84C, #F5D98A, #C9A84C);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--sans);
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ── CUSTOM CURSOR ── */
+.cursor {
+  position: fixed; top: 0; left: 0;
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+}
+.cursor-ring {
+  position: fixed; top: 0; left: 0;
+  width: 36px; height: 36px;
+  border: 1px solid rgba(201,168,76,0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease;
+}
+.cursor.hover { width: 14px; height: 14px; background: var(--gold-light); }
+.cursor-ring.hover { width: 52px; height: 52px; border-color: var(--gold); }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 2px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 0 4rem;
+  height: 72px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(13,13,13,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+  transition: all 0.3s ease;
+}
+nav.scrolled { height: 60px; background: rgba(13,13,13,0.97); }
+
+.nav-logo {
+  display: flex; align-items: center; gap: 0.5rem;
+  text-decoration: none;
+}
+.logo-mark {
+  position: relative;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  padding: 0.2rem 0.6rem;
+}
+.logo-mark::before, .logo-mark::after {
+  content: '';
+  position: absolute;
+  width: 10px; height: 10px;
+  border-color: var(--gold);
+  border-style: solid;
+}
+.logo-mark::before {
+  top: 0; left: 0;
+  border-width: 1.5px 0 0 1.5px;
+}
+.logo-mark::after {
+  bottom: 0; right: 0;
+  border-width: 0 1.5px 1.5px 0;
+}
+.logo-sub {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  background: var(--gold-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-links {
+  display: flex; gap: 2.5rem; list-style: none;
+}
+.nav-links a {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white-70);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.nav-cta {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: var(--gold-gradient);
+  color: var(--black);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+.nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block; width: 24px; height: 1.5px;
+  background: var(--gold);
+  transition: all 0.3s;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+}
+
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(201,168,76,0.06) 0%, transparent 65%),
+              radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.04) 0%, transparent 50%);
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  text-align: center;
+  padding: 0 2rem;
+  max-width: 900px;
+  animation: heroIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-pretag {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 0.45rem 1.1rem;
+  margin-bottom: 2rem;
+  animation: heroIn 1.2s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-pretag::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.7)} }
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(3.2rem, 7vw, 7rem);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  animation: heroIn 1.2s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-title .gold-line {
+  display: block;
+  background: var(--gold-text);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+@keyframes shimmer { to { background-position: 200% center; } }
+
+.hero-sub {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--white-70);
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  animation: heroIn 1.2s 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-btns {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1rem; flex-wrap: wrap;
+  margin-bottom: 3rem;
+  animation: heroIn 1.2s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.btn-gold {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  background: var(--gold-gradient);
+  color: var(--black);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  transition: opacity 0.25s, transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 0 0 rgba(201,168,76,0);
+}
+.btn-gold:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.35);
+}
+
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  transition: all 0.25s;
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.hero-badges {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.5rem; flex-wrap: wrap;
+  animation: heroIn 1.2s 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.badge {
+  display: flex; align-items: center; gap: 0.4rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white-50);
+}
+.badge-check {
+  width: 16px; height: 16px;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.4);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  font-size: 0.55rem;
+  flex-shrink: 0;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 2.5rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  z-index: 2;
+  animation: heroIn 1.2s 1s both;
+}
+.scroll-hint span {
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--white-50);
+}
+.scroll-line {
+  width: 1px; height: 50px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0%,100% { transform: scaleY(1); opacity: 1; }
+  50% { transform: scaleY(0.5); opacity: 0.4; }
+}
+
+/* ── SECTION BASE ── */
+section { position: relative; overflow: hidden; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 3rem; }
+.section-pad { padding: 8rem 0; }
+.section-pad-sm { padding: 5rem 0; }
+
+.section-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.section-label::before {
+  content: '';
+  display: block; width: 2.5rem; height: 1px;
+  background: var(--gold);
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+.section-title .gold {
+  background: var(--gold-text);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+.section-body {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--white-70);
+}
+
+/* ── STATS STRIP ── */
+.stats-strip {
+  background: var(--charcoal);
+  border-top: 1px solid rgba(201,168,76,0.1);
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat-item {
+  padding: 3.5rem 2rem;
+  text-align: center;
+  border-right: 1px solid rgba(201,168,76,0.08);
+  position: relative;
+  transition: background 0.3s;
+}
+.stat-item:last-child { border-right: none; }
+.stat-item::after {
+  content: '';
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 0; height: 2px;
+  background: var(--gold);
+  transition: width 0.4s ease;
+}
+.stat-item:hover { background: rgba(201,168,76,0.04); }
+.stat-item:hover::after { width: 60%; }
+
+.stat-num {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1;
+  background: var(--gold-text);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+  margin-bottom: 0.5rem;
+}
+.stat-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white-50);
+}
+
+/* ── ABOUT ── */
+.about-section { background: var(--black); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+.about-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.glass-card {
+  background: var(--white-05);
+  border: 1px solid rgba(201,168,76,0.12);
+  padding: 1.75rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+.glass-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201,168,76,0.35);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(201,168,76,0.15), 0 0 30px rgba(201,168,76,0.08);
+}
+.glass-card:hover::before { opacity: 1; }
+
+.card-icon {
+  width: 40px; height: 40px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.card-title {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+.card-desc {
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--white-50);
+}
+
+/* ── HOW IT WORKS ── */
+.how-section { background: var(--charcoal2); }
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  margin-top: 4rem;
+  position: relative;
+}
+.steps-grid::before {
+  content: '';
+  position: absolute;
+  top: 3rem; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,168,76,0.3) 20%, rgba(201,168,76,0.3) 80%, transparent);
+}
+.step-item {
+  padding: 0 1.5rem;
+  text-align: center;
+  position: relative;
+}
+.step-num-wrap {
+  display: flex; justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.step-num {
+  width: 3.5rem; height: 3.5rem;
+  background: var(--charcoal2);
+  border: 1px solid rgba(201,168,76,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s;
+}
+.step-item:hover .step-num {
+  background: rgba(201,168,76,0.1);
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(201,168,76,0.2);
+}
+.step-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.step-desc {
+  font-size: 0.73rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--white-50);
+}
+
+/* ── PROGRAMS ── */
+.programs-section { background: var(--black); }
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+.program-card {
+  background: var(--charcoal);
+  border: 1px solid rgba(201,168,76,0.1);
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+  transform-style: preserve-3d;
+}
+.program-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+.program-card:hover {
+  transform: translateY(-8px) perspective(1000px) rotateX(2deg);
+  border-color: rgba(201,168,76,0.35);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(201,168,76,0.08);
+}
+.program-card:hover::after { transform: scaleX(1); }
+
+.program-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  filter: grayscale(30%);
+  transition: filter 0.3s, transform 0.3s;
+}
+.program-card:hover .program-icon { filter: none; transform: scale(1.1); }
+
+.program-type {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+.program-title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+.program-desc {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--white-50);
+  margin-bottom: 1.5rem;
+}
+.program-features {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 0.45rem;
+  margin-bottom: 1.75rem;
+}
+.program-features li {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--white-70);
+  font-weight: 400;
+}
+.program-features li::before {
+  content: '→';
+  color: var(--gold);
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+.program-price {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  padding-top: 1rem;
+}
+
+/* ── POST-GRAD SERVICES ── */
+.services-section {
+  background: linear-gradient(135deg, #0D0D0D 0%, #141208 50%, #0D0D0D 100%);
+  position: relative;
+}
+.services-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 60%);
+}
+.services-big-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.services-big-title .gold-block {
+  display: block;
+  background: var(--gold-text);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+.service-card {
+  background: var(--white-05);
+  border: 1px solid rgba(201,168,76,0.1);
+  padding: 2.5rem 2.5rem;
+  display: flex; gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service-card::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--gold-gradient);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s ease;
+}
+.service-card:hover {
+  border-color: rgba(201,168,76,0.25);
+  transform: translateX(4px);
+  box-shadow: -4px 0 30px rgba(201,168,76,0.06);
+}
+.service-card:hover::before { transform: scaleY(1); }
+.service-icon-wrap {
+  width: 52px; height: 52px; flex-shrink: 0;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  transition: background 0.3s;
+}
+.service-card:hover .service-icon-wrap { background: rgba(201,168,76,0.15); }
+.service-info-title {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.service-info-desc {
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--white-50);
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials-section { background: var(--charcoal2); }
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+.testi-card {
+  background: var(--charcoal);
+  border: 1px solid rgba(201,168,76,0.1);
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.testi-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201,168,76,0.3);
+  box-shadow: 0 16px 50px rgba(0,0,0,0.4), 0 0 30px rgba(201,168,76,0.06);
+}
+.testi-quote-mark {
+  font-family: var(--serif);
+  font-size: 4.5rem;
+  line-height: 0.8;
+  color: var(--gold);
+  opacity: 0.25;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.testi-text {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--white-70);
+  margin-bottom: 2rem;
+}
+.testi-author {
+  display: flex; align-items: center; gap: 1rem;
+  border-top: 1px solid rgba(201,168,76,0.1);
+  padding-top: 1.5rem;
+}
+.testi-avatar {
+  width: 44px; height: 44px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.testi-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--white);
+}
+.testi-role {
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--white-50);
+  margin-top: 0.15rem;
+}
+.testi-stars {
+  margin-left: auto;
+  color: var(--gold);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+}
+
+/* ── UNIVERSITIES ── */
+.uni-section { background: var(--black); }
+.uni-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+.uni-card {
+  background: var(--white-05);
+  border: 1px solid rgba(201,168,76,0.08);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+.uni-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--gold-gradient);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+.uni-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201,168,76,0.25);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 20px rgba(201,168,76,0.06);
+}
+.uni-card:hover::after { transform: scaleX(1); }
+.uni-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+.uni-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+.uni-country {
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+/* ── FAQ ── */
+.faq-section { background: var(--charcoal); }
+.faq-list {
+  margin-top: 4rem;
+  max-width: 860px;
+  display: flex; flex-direction: column; gap: 0;
+}
+.faq-item {
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  overflow: hidden;
+}
+.faq-question {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.75rem 0;
+  cursor: pointer;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--white);
+  transition: color 0.3s;
+  gap: 1rem;
+  user-select: none;
+}
+.faq-question:hover { color: var(--gold); }
+.faq-icon {
+  width: 28px; height: 28px; flex-shrink: 0;
+  border: 1px solid rgba(201,168,76,0.3);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  font-size: 1rem;
+  transition: all 0.3s;
+  line-height: 1;
+}
+.faq-item.open .faq-icon {
+  background: rgba(201,168,76,0.1);
+  border-color: var(--gold);
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s;
+}
+.faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.5rem; }
+.faq-answer p {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--white-70);
+  padding-right: 3rem;
+}
+
+/* ── CONTACT ── */
+.contact-section { background: var(--black); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.contact-form-wrap {
+  background: var(--charcoal);
+  border: 1px solid rgba(201,168,76,0.12);
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.contact-form-wrap::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold-gradient);
+}
+.form-group { margin-bottom: 1.25rem; }
+.form-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.3s, background 0.3s;
+  -webkit-appearance: none;
+}
+.form-input::placeholder, .form-textarea::placeholder { color: var(--white-50); }
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: rgba(201,168,76,0.5);
+  background: rgba(201,168,76,0.04);
+}
+.form-select { cursor: pointer; }
+.form-select option { background: var(--charcoal); color: var(--white); }
+.form-textarea { resize: none; height: 100px; }
+.form-btn {
+  width: 100%;
+  padding: 1.1rem;
+  background: var(--gold-gradient);
+  color: var(--black);
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.25s, transform 0.25s, box-shadow 0.25s;
+  margin-top: 0.5rem;
+}
+.form-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.3);
+}
+
+.contact-info-col { padding-top: 1rem; }
+.contact-main-num {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  background: var(--gold-text);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+.contact-tagline {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--white-50);
+  margin-bottom: 3rem;
+}
+.contact-items { display: flex; flex-direction: column; gap: 1.25rem; }
+.contact-item {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--white-05);
+  border: 1px solid rgba(201,168,76,0.08);
+  transition: all 0.3s;
+}
+.contact-item:hover { border-color: rgba(201,168,76,0.25); background: rgba(201,168,76,0.04); }
+.contact-item-icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  background: rgba(201,168,76,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+}
+.contact-item-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.2rem;
+}
+.contact-item-val {
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-item-val:hover { color: var(--gold); }
+
+.whatsapp-btn {
+  display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+  width: 100%; padding: 1rem;
+  background: rgba(37, 211, 102, 0.1);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  color: #25D366;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 1.25rem;
+  transition: all 0.3s;
+}
+.whatsapp-btn:hover { background: rgba(37, 211, 102, 0.2); border-color: #25D366; }
+
+/* ── FOOTER ── */
+footer {
+  background: #080808;
+  border-top: 1px solid rgba(201,168,76,0.1);
+  padding: 5rem 0 2rem;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.footer-brand-desc {
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--white-50);
+  margin-top: 1rem;
+  max-width: 280px;
+}
+.footer-tagline {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 1.5rem;
+}
+.footer-col-head {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+.footer-links a {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--white-50);
+  text-decoration: none;
+  transition: color 0.2s;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.footer-links a::before { content: '›'; color: var(--gold-dark); }
+.footer-links a:hover { color: var(--white); }
+
+.footer-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 2rem;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-copy {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.05em;
+}
+.footer-legal {
+  display: flex; gap: 1.5rem;
+}
+.footer-legal a {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-legal a:hover { color: var(--gold); }
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  nav { padding: 0 2rem; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .container { padding: 0 2rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .programs-grid { grid-template-columns: 1fr 1fr; }
+  .steps-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .steps-grid::before { display: none; }
+  .testi-grid { grid-template-columns: 1fr 1fr; }
+  .uni-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+}
+@media (max-width: 640px) {
+  .programs-grid, .services-grid, .testi-grid, .uni-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .about-cards { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .hero-badges { gap: 0.75rem; }
+  .section-pad { padding: 5rem 0; }
+}
+
+/* ── MOBILE MENU ── */
+.mobile-menu {
+  position: fixed; inset: 0;
+  background: rgba(13,13,13,0.98);
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  backdrop-filter: blur(20px);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-close {
+  position: absolute; top: 1.5rem; right: 2rem;
+  background: none; border: none; color: var(--gold);
+  font-size: 1.8rem; cursor: pointer;
+}
+
+/* ── GOLD LINE DIVIDER ── */
+.gold-divider {
+  width: 60px; height: 2px;
+  background: var(--gold-gradient);
+  margin: 1.5rem 0;
+}
+
+/* ── NOTIFICATION TOAST ── */
+.toast {
+  position: fixed; bottom: 2rem; right: 2rem;
+  background: var(--charcoal);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-left: 3px solid var(--gold);
+  padding: 1rem 1.5rem;
+  font-size: 0.82rem;
+  color: var(--white);
+  z-index: 9999;
+  transform: translateX(120%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 280px;
+}
+.toast.show { transform: translateX(0); }
+</style>
+</head>
+<body>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✓ We'll call you back within 24 hours!</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#programs" onclick="closeMobile()">Programs</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#universities" onclick="closeMobile()">Universities</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="#contact" class="btn-gold" onclick="closeMobile()">Free Callback</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="logo-mark">ILMORA</div>
+    <span class="logo-sub">Education</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#universities">Universities</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get a Free Callback</a>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-pretag">Premium Education Consultancy · UAE & India</div>
+    <h1 class="hero-title">
+      Get Your Degree.<br>
+      <span class="gold-line">We Handle the Rest.</span>
+    </h1>
+    <p class="hero-sub">Flexible UG, PG & PhD programs for working professionals — with complete attestation, equivalency, and documentation support handled by us, A to Z.</p>
+    <div class="hero-btns">
+      <a href="#programs" class="btn-gold">Explore Programs →</a>
+      <a href="#contact" class="btn-outline">📞 Request a Callback</a>
+    </div>
+    <div class="hero-badges">
+      <span class="badge"><span class="badge-check">✓</span> Authorized Universities</span>
+      <span class="badge"><span class="badge-check">✓</span> UAE Equivalency Support</span>
+      <span class="badge"><span class="badge-check">✓</span> Affordable Fees</span>
+      <span class="badge"><span class="badge-check">✓</span> Complete Documentation Handled</span>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num" data-target="50000" data-suffix="k+">0</div>
+        <div class="stat-label">Students Reached</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="200" data-suffix="+">0</div>
+        <div class="stat-label">Institutions</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="25" data-suffix="+">0</div>
+        <div class="stat-label">Countries</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-suffix="%">100</div>
+        <div class="stat-label">Documentation Handled</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section section-pad" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="section-label">About ILMORA</div>
+        <h2 class="section-title">Why Thousands<br><span class="gold">Trust ILMORA</span></h2>
+        <div class="gold-divider"></div>
+        <p class="section-body" style="margin-bottom:2rem;">ILMORA is not just a course platform — it is your complete A-to-Z career development partner. We make quality, accredited education accessible to working professionals worldwide, with <strong style="color:var(--white); font-weight:600;">zero administrative burden</strong> on our students.</p>
+        <p class="section-body">From the moment you enroll to the day your certificate is internationally recognized, we handle every step. Attestation, equivalency, university documentation — you focus on learning, we handle the rest.</p>
+        <div style="margin-top:2.5rem;">
+          <a href="#contact" class="btn-gold">Start Your Journey →</a>
+        </div>
+      </div>
+      <div class="about-cards reveal reveal-delay-2">
+        <div class="glass-card">
+          <div class="card-icon">💼</div>
+          <div class="card-title">No Need to Quit Your Job</div>
+          <div class="card-desc">Weekend classes and flexible online schedules designed around your career</div>
+        </div>
+        <div class="glass-card">
+          <div class="card-icon">🏛️</div>
+          <div class="card-title">Authorized University Certificates</div>
+          <div class="card-desc">Degrees from accredited, recognized institutions accepted worldwide</div>
+        </div>
+        <div class="glass-card">
+          <div class="card-icon">💰</div>
+          <div class="card-title">Affordable, Transparent Fees</div>
+          <div class="card-desc">World-class education at prices built for everyone — no hidden costs</div>
+        </div>
+        <div class="glass-card">
+          <div class="card-icon">📋</div>
+          <div class="card-title">We Handle All Paperwork</div>
+          <div class="card-desc">Attestation, equivalency, documentation — completely managed by us</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section section-pad" id="how">
+  <div class="container">
+    <div style="text-align:center;" class="reveal">
+      <div class="section-label" style="justify-content:center;">Your Journey</div>
+      <h2 class="section-title">How It Works With <span class="gold">ILMORA</span></h2>
+      <div class="gold-divider" style="margin:1.5rem auto;"></div>
+      <p class="section-body" style="max-width:540px;margin:0 auto;">Five simple steps from enrollment to internationally recognized career success.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-item reveal reveal-delay-1">
+        <div class="step-num-wrap"><div class="step-num">1</div></div>
+        <div class="step-title">Choose Your Program</div>
+        <div class="step-desc">Browse flexible UG, PG, PhD, or certification programs that fit your career goals</div>
+      </div>
+      <div class="step-item reveal reveal-delay-2">
+        <div class="step-num-wrap"><div class="step-num">2</div></div>
+        <div class="step-title">Enroll & Start Learning</div>
+        <div class="step-desc">Weekend classes, online support, assignment help — study completely at your pace</div>
+      </div>
+      <div class="step-item reveal reveal-delay-3">
+        <div class="step-num-wrap"><div class="step-num">3</div></div>
+        <div class="step-title">Graduate</div>
+        <div class="step-desc">Complete your degree from an authorized, accredited university with full support</div>
+      </div>
+      <div class="step-item reveal reveal-delay-4">
+        <div class="step-num-wrap"><div class="step-num">4</div></div>
+        <div class="step-title">We Handle Everything</div>
+        <div class="step-desc">ILMORA manages your attestation, UAE equivalency, and all international recognition</div>
+      </div>
+      <div class="step-item reveal reveal-delay-4" style="transition-delay:0.5s;">
+        <div class="step-num-wrap"><div class="step-num">5</div></div>
+        <div class="step-title">Career Growth</div>
+        <div class="step-desc">Your certified, recognized qualification opens new doors globally</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs-section section-pad" id="programs">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Study Options</div>
+      <h2 class="section-title">Flexible Programs for <span class="gold">Every Stage</span></h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="programs-grid">
+      <div class="program-card reveal reveal-delay-1">
+        <span class="program-icon">🎓</span>
+        <div class="program-type">Undergraduate</div>
+        <div class="program-title">UG Programs</div>
+        <div class="program-desc">Bachelor degrees in Arts, Commerce, Science, and Technology for working professionals</div>
+        <ul class="program-features">
+          <li>Weekend Classes</li>
+          <li>Online Support</li>
+          <li>Assignment Help</li>
+          <li>Exam Scheduling</li>
+        </ul>
+        <div class="program-price">✦ Affordable Monthly Plans Available</div>
+      </div>
+      <div class="program-card reveal reveal-delay-2">
+        <span class="program-icon">📚</span>
+        <div class="program-type">Postgraduate</div>
+        <div class="program-title">PG Programs</div>
+        <div class="program-desc">Master degrees with specialization across business, technology, and professional fields</div>
+        <ul class="program-features">
+          <li>Flexible Schedule</li>
+          <li>Industry Projects</li>
+          <li>Career Guidance</li>
+          <li>Research Support</li>
+        </ul>
+        <div class="program-price">✦ Affordable Monthly Plans Available</div>
+      </div>
+      <div class="program-card reveal reveal-delay-3">
+        <span class="program-icon">⚙️</span>
+        <div class="program-type">Technical</div>
+        <div class="program-title">BTech / MTech</div>
+        <div class="program-desc">Engineering degrees with practical training and lab support — ideal for UAE professionals</div>
+        <ul class="program-features">
+          <li>Practical Training</li>
+          <li>Lab Support</li>
+          <li>UAE Equivalency Ready</li>
+          <li>International Certification</li>
+        </ul>
+        <div class="program-price">✦ Affordable Monthly Plans Available</div>
+      </div>
+      <div class="program-card reveal reveal-delay-4">
+        <span class="program-icon">🔬</span>
+        <div class="program-type">Doctorate</div>
+        <div class="program-title">PhD Programs</div>
+        <div class="program-desc">Doctorate programs with dedicated research guidance, thesis support and publication help</div>
+        <ul class="program-features">
+          <li>Research Support</li>
+          <li>Thesis Guidance</li>
+          <li>Publication Help</li>
+          <li>Mentorship Access</li>
+        </ul>
+        <div class="program-price">✦ Affordable Monthly Plans Available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POST-GRAD SERVICES -->
+<section class="services-section section-pad" id="services">
+  <div class="container">
+    <div style="text-align:center;" class="reveal">
+      <div class="section-label" style="justify-content:center;">Our Differentiator</div>
+      <div class="services-big-title" style="text-align:center;">
+        We Don't Just Teach You —<br>
+        <span class="gold-block">We Get You Recognized Worldwide</span>
+      </div>
+      <div class="gold-divider" style="margin:1.5rem auto;"></div>
+      <p class="section-body" style="max-width:580px;margin:0 auto;">While other platforms leave you alone after graduation, ILMORA handles your entire post-degree journey. Certificate to career — we manage it all.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon-wrap">📜</div>
+        <div>
+          <div class="service-info-title">Certificate Attestation</div>
+          <div class="service-info-desc">We handle complete certificate attestation for international employment, visa applications, and further studies. Zero effort required from your side.</div>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon-wrap">🇦🇪</div>
+        <div>
+          <div class="service-info-title">UAE Equivalency</div>
+          <div class="service-info-desc">Specialized support for BTech & MTech graduates seeking UAE equivalency certification. We know the exact process — and we do it for you.</div>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon-wrap">🌍</div>
+        <div>
+          <div class="service-info-title">International Recognition</div>
+          <div class="service-info-desc">Your degree recognized across borders. We manage all documentation, verification, and international recognition paperwork — end to end.</div>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-4">
+        <div class="service-icon-wrap">🚀</div>
+        <div>
+          <div class="service-info-title">Career Consultancy</div>
+          <div class="service-info-desc">Personal guidance for your complete career development journey — from choosing the right program to landing the right opportunity.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section section-pad">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Student Stories</div>
+      <h2 class="section-title">Real People. Real Careers.<br><span class="gold">Real Results.</span></h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal reveal-delay-1">
+        <span class="testi-quote-mark">"</span>
+        <p class="testi-text">I completed my MTech while working full-time in Dubai. ILMORA handled everything — attestation, UAE equivalency, all the paperwork. I didn't have to worry about a single form. Truly A-to-Z support.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AK</div>
+          <div>
+            <div class="testi-name">Ahmed Khan</div>
+            <div class="testi-role">Senior Engineer · Dubai, UAE</div>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <span class="testi-quote-mark">"</span>
+        <p class="testi-text">The fees were incredibly affordable compared to other programs. I got my PG degree, and ILMORA's team guided me through every step. My career has completely transformed. Worth every rupee.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">PR</div>
+          <div>
+            <div class="testi-name">Priya Rajan</div>
+            <div class="testi-role">HR Manager · Hyderabad, India</div>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-3">
+        <span class="testi-quote-mark">"</span>
+        <p class="testi-text">I was a business owner who needed a proper degree for credibility. ILMORA made it possible without disrupting my business. The certificate attestation they arranged was recognized immediately by international partners.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MJ</div>
+          <div>
+            <div class="testi-name">Mohammed Jabir</div>
+            <div class="testi-role">Business Owner · Abu Dhabi, UAE</div>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIVERSITIES -->
+<section class="uni-section section-pad" id="universities">
+  <div class="container">
+    <div style="text-align:center;" class="reveal">
+      <div class="section-label" style="justify-content:center;">Our Partners</div>
+      <h2 class="section-title">Certified by <span class="gold">Authorized Universities</span></h2>
+      <div class="gold-divider" style="margin:1.5rem auto;"></div>
+      <p class="section-body" style="max-width:520px;margin:0 auto;">Every program is delivered through accredited, recognized universities ensuring your certificate holds value globally.</p>
+    </div>
+    <div class="uni-grid">
+      <div class="uni-card reveal reveal-delay-1">
+        <span class="uni-icon">🏛️</span>
+        <div class="uni-name">IGNOU — Indira Gandhi National Open University</div>
+        <div class="uni-country">India · UGC Recognized</div>
+      </div>
+      <div class="uni-card reveal reveal-delay-2">
+        <span class="uni-icon">🎓</span>
+        <div class="uni-name">Annamalai University</div>
+        <div class="uni-country">India · NAAC Accredited</div>
+      </div>
+      <div class="uni-card reveal reveal-delay-3">
+        <span class="uni-icon">🏫</span>
+        <div class="uni-name">Madurai Kamaraj University</div>
+        <div class="uni-country">India · Distance Education</div>
+      </div>
+      <div class="uni-card reveal reveal-delay-4">
+        <span class="uni-icon">📖</span>
+        <div class="uni-name">Sikkim Manipal University</div>
+        <div class="uni-country">India · Online Programs</div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:2rem; font-size:0.75rem; color:var(--white-50); font-weight:300;">+ More accredited university partners. Contact us for the full list.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section section-pad" id="faq">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Common Questions</div>
+      <h2 class="section-title">Everything You<br><span class="gold">Need to Know</span></h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">Are the certificates internationally recognized?<span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Yes. All certificates issued through ILMORA's partner universities are from UGC-recognized, NAAC-accredited institutions. They are accepted internationally including for UAE equivalency, overseas employment, and further studies abroad.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do I need to handle attestation myself?<span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Absolutely not. This is ILMORA's biggest differentiator. We handle 100% of the attestation, equivalency, and documentation process on your behalf. You provide us with the required documents — we do the rest.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I study while working full time?<span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Yes — that's exactly who we built this for. All programs have weekend classes and flexible online learning options. You never need to take leave or disrupt your current job to complete your degree with ILMORA.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How affordable are the programs?<span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>ILMORA's programs are significantly more affordable than traditional universities. We offer flexible monthly payment plans with no hidden costs. Contact us for a free consultation and we'll share exact pricing for your program of interest.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is UAE equivalency and do you support it?<span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>UAE equivalency is the process of getting your Indian degree recognized by UAE authorities, required for many professional roles and visa categories in the UAE. ILMORA specializes in this — we handle the entire process for BTech and MTech graduates.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How long does it take to complete a degree?<span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Duration varies by program. UG degrees typically take 3 years, PG programs 1–2 years, and certifications can be completed in a few months. ILMORA designs intensive, focused programs to minimize duration without compromising quality.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What happens after I enroll?<span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Once enrolled, you get a dedicated advisor who guides you through classes, assignments, and exams. After graduation, ILMORA handles all your post-degree documentation. You'll receive full support from day one to the day your certificate is recognized.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section section-pad" id="contact">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:4rem;">
+      <div class="section-label" style="justify-content:center;">Get In Touch</div>
+      <h2 class="section-title">Start Your Journey <span class="gold">Today</span></h2>
+      <div class="gold-divider" style="margin:1.5rem auto;"></div>
+      <p class="section-body" style="max-width:500px;margin:0 auto;">Talk to our advisors — free consultation, no commitment. We'll find the right program for you and explain exactly how we handle everything.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-form-wrap reveal">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" placeholder="Your full name" id="fname">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="form-input" placeholder="+91 or +971 number" id="fphone">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="your@email.com" id="femail">
+        </div>
+        <div class="form-group">
+          <label class="form-label">I'm Interested In</label>
+          <select class="form-select form-input" id="finterest">
+            <option value="">Select a program or service...</option>
+            <option>UG Program (Bachelor Degree)</option>
+            <option>PG Program (Master Degree)</option>
+            <option>PhD Program</option>
+            <option>BTech / MTech (Technical Degree)</option>
+            <option>Short Certification Course</option>
+            <option>UAE Equivalency Support</option>
+            <option>Certificate Attestation</option>
+            <option>Corporate Training</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message (Optional)</label>
+          <textarea class="form-input form-textarea" placeholder="Tell us about your current situation or any questions..."></textarea>
+        </div>
+        <button class="form-btn" onclick="submitForm()">📞 Request a Free Callback</button>
+      </div>
+      <div class="contact-info-col reveal reveal-delay-2">
+        <div class="contact-main-num">+91 74830 08412</div>
+        <div class="contact-tagline">Call or WhatsApp us anytime for a free consultation</div>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <div class="contact-item-label">Phone / WhatsApp</div>
+              <a href="tel:+917483008412" class="contact-item-val">+91 74830 08412</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <a href="mailto:info@ilmoratech.com" class="contact-item-val">info@ilmoratech.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <div class="contact-item-label">Office</div>
+              <span class="contact-item-val">129-132 DLF CyberCity, Hyderabad, India</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🇦🇪</div>
+            <div>
+              <div class="contact-item-label">UAE Operations</div>
+              <span class="contact-item-val">Dubai & Abu Dhabi — UAE Equivalency Specialists</span>
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/917483008412?text=Hi%20ILMORA%2C%20I%27m%20interested%20in%20your%20education%20programs" class="whatsapp-btn" target="_blank">
+          💬 Chat on WhatsApp — Instant Response
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="#" class="nav-logo" style="text-decoration:none; display:flex; gap:0.5rem; align-items:center;">
+          <div class="logo-mark">ILMORA</div>
+          <span class="logo-sub">Education</span>
+        </a>
+        <p class="footer-brand-desc">Your complete A-to-Z career development partner. Flexible degrees, affordable fees, and full documentation support — from enrollment to international recognition.</p>
+        <div class="footer-tagline">UAE & India · Serving 25+ Countries</div>
+      </div>
+      <div>
+        <div class="footer-col-head">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#universities">Universities</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-head">Programs</div>
+        <ul class="footer-links">
+          <li><a href="#programs">UG Programs</a></li>
+          <li><a href="#programs">PG Programs</a></li>
+          <li><a href="#programs">BTech / MTech</a></li>
+          <li><a href="#programs">PhD Programs</a></li>
+          <li><a href="#programs">Certifications</a></li>
+          <li><a href="#services">UAE Equivalency</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-head">Contact Us</div>
+        <ul class="footer-links">
+          <li><a href="tel:+917483008412">+91 74830 08412</a></li>
+          <li><a href="mailto:info@ilmoratech.com">info@ilmoratech.com</a></li>
+          <li><a href="#contact">Hyderabad, India</a></li>
+          <li><a href="#contact">UAE Operations</a></li>
+          <li><a href="https://wa.me/917483008412" target="_blank">WhatsApp Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 ILMORA Education. All rights reserved. · UAE & India</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// ── CURSOR ──
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx + 'px';
+  cursor.style.top = my + 'px';
+});
+
+function animRing() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top = ry + 'px';
+  requestAnimationFrame(animRing);
+}
+animRing();
+
+document.querySelectorAll('a, button, .faq-question, .program-card, .glass-card').forEach(el => {
+  el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); ring.classList.add('hover'); });
+  el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); ring.classList.remove('hover'); });
+});
+
+// ── NAV SCROLL ──
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ── MOBILE MENU ──
+document.getElementById('hamburger').onclick = () => document.getElementById('mobileMenu').classList.add('open');
+document.getElementById('mobileClose').onclick = () => document.getElementById('mobileMenu').classList.remove('open');
+function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+// ── THREE.JS HERO ──
+(function() {
+  const canvas = document.getElementById('hero-canvas');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(canvas.parentElement.offsetWidth, canvas.parentElement.offsetHeight);
+  renderer.setClearColor(0x000000, 0);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
+  camera.position.set(0, 0, 5);
+
+  // Gold particles
+  const particleCount = 1800;
+  const positions = new Float32Array(particleCount * 3);
+  const sizes = new Float32Array(particleCount);
+  const speeds = new Float32Array(particleCount);
+
+  for (let i = 0; i < particleCount; i++) {
+    positions[i * 3] = (Math.random() - 0.5) * 24;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 16;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 12;
+    sizes[i] = Math.random() * 2.5 + 0.5;
+    speeds[i] = Math.random() * 0.008 + 0.002;
+  }
+
+  const pGeo = new THREE.BufferGeometry();
+  pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  pGeo.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+
+  const pMat = new THREE.PointsMaterial({
+    color: 0xC9A84C,
+    size: 0.05,
+    transparent: true,
+    opacity: 0.6,
+    sizeAttenuation: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false
+  });
+
+  const particles = new THREE.Points(pGeo, pMat);
+  scene.add(particles);
+
+  // Globe wireframe
+  const gGeo = new THREE.SphereGeometry(2.2, 18, 12);
+  const edges = new THREE.EdgesGeometry(gGeo);
+  const lineMat = new THREE.LineBasicMaterial({
+    color: 0xC9A84C,
+    transparent: true,
+    opacity: 0.06
+  });
+  const globe = new THREE.LineSegments(edges, lineMat);
+  globe.position.set(3, -0.5, -2);
+  scene.add(globe);
+
+  // Floating gold rings
+  const rings = [];
+  const ringData = [
+    { r: 0.8, x: -3, y: 1, z: -1, rx: 0.4, rz: 0.3 },
+    { r: 0.5, x: 2.5, y: -1.5, z: 0.5, rx: -0.3, rz: 0.6 },
+    { r: 1.1, x: -1.5, y: -2, z: -2, rx: 0.6, rz: -0.2 }
+  ];
+  ringData.forEach(d => {
+    const geo = new THREE.TorusGeometry(d.r, 0.008, 6, 48);
+    const mat = new THREE.MeshBasicMaterial({ color: 0xC9A84C, transparent: true, opacity: 0.18 });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(d.x, d.y, d.z);
+    mesh.rotation.x = d.rx;
+    mesh.rotation.z = d.rz;
+    scene.add(mesh);
+    rings.push({ mesh, baseY: d.y });
+  });
+
+  // Floating cubes
+  const cubes = [];
+  const cubeData = [
+    { s: 0.15, x: -4, y: 2, z: -1.5 },
+    { s: 0.1, x: 4, y: 1, z: -0.5 },
+    { s: 0.18, x: -2, y: -2.5, z: 0.5 },
+    { s: 0.12, x: 3.5, y: -2, z: -2 }
+  ];
+  cubeData.forEach(d => {
+    const edges2 = new THREE.EdgesGeometry(new THREE.BoxGeometry(d.s, d.s, d.s));
+    const mat2 = new THREE.LineBasicMaterial({ color: 0xC9A84C, transparent: true, opacity: 0.4 });
+    const mesh2 = new THREE.LineSegments(edges2, mat2);
+    mesh2.position.set(d.x, d.y, d.z);
+    scene.add(mesh2);
+    cubes.push({ mesh: mesh2, baseY: d.y, speed: Math.random() * 0.01 + 0.005 });
+  });
+
+  let mouse = { x: 0, y: 0 };
+  document.addEventListener('mousemove', e => {
+    mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;
+    mouse.y = -(e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+  window.addEventListener('resize', () => {
+    const w = canvas.parentElement.offsetWidth;
+    const h = canvas.parentElement.offsetHeight;
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  });
+
+  let t = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    t += 0.008;
+
+    // Drift particles up slowly
+    const pos = pGeo.attributes.position.array;
+    for (let i = 0; i < particleCount; i++) {
+      pos[i * 3 + 1] += speeds[i];
+      if (pos[i * 3 + 1] > 8) pos[i * 3 + 1] = -8;
+    }
+    pGeo.attributes.position.needsUpdate = true;
+    particles.rotation.y = t * 0.03;
+
+    // Rotate globe slowly
+    globe.rotation.y = t * 0.06;
+    globe.rotation.x = t * 0.02;
+
+    // Float rings
+    rings.forEach((r, i) => {
+      r.mesh.position.y = r.baseY + Math.sin(t + i * 1.5) * 0.25;
+      r.mesh.rotation.y += 0.004;
+      r.mesh.rotation.x += 0.002;
+    });
+
+    // Float cubes
+    cubes.forEach((c, i) => {
+      c.mesh.position.y = c.baseY + Math.sin(t * 0.7 + i * 2) * 0.2;
+      c.mesh.rotation.x += c.speed;
+      c.mesh.rotation.y += c.speed * 0.7;
+    });
+
+    // Subtle camera parallax
+    camera.position.x += (mouse.x * 0.3 - camera.position.x) * 0.03;
+    camera.position.y += (mouse.y * 0.15 - camera.position.y) * 0.03;
+    camera.lookAt(0, 0, 0);
+
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
+
+// ── SCROLL REVEAL ──
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ── COUNTER ANIMATION ──
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = parseInt(el.dataset.target || el.textContent);
+    const suffix = el.dataset.suffix || '';
+    const duration = 2000;
+    const start = performance.now();
+
+    if (!el.dataset.target) { counterObs.unobserve(el); return; }
+
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      let val = Math.floor(eased * target);
+      if (target >= 1000) val = (val / 1000).toFixed(0) + 'k';
+      el.textContent = val + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+    counterObs.unobserve(el);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObs.observe(el));
+
+// ── FAQ ──
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// ── FORM SUBMIT ──
+function submitForm() {
+  const name = document.getElementById('fname').value;
+  const phone = document.getElementById('fphone').value;
+  const email = document.getElementById('femail').value;
+
+  if (!name || !phone || !email) {
+    const toast = document.getElementById('toast');
+    toast.textContent = '⚠️ Please fill in your name, phone, and email.';
+    toast.style.borderLeftColor = '#e74c3c';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+    return;
+  }
+
+  const toast = document.getElementById('toast');
+  toast.textContent = '✓ Thank you! We\'ll call you back within 24 hours.';
+  toast.style.borderLeftColor = 'var(--gold)';
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4000);
+
+  // Reset form
+  ['fname','fphone','femail','finterest'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+}
+</script>
+</body>
+</html>
